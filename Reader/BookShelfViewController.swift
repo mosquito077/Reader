@@ -8,9 +8,8 @@
 
 import UIKit
 import SnapKit
-import PDFReader
 
-class BookShelfViewController: UIViewController, UIPopoverPresentationControllerDelegate, NavViewProtocol, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+class BookShelfViewController: UIViewController, UIPopoverPresentationControllerDelegate, NavViewProtocol, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, ReaderViewControllerDelegate{
     
     let backgroundHeight: CGFloat = 200
     let navViewHeight: CGFloat = 64
@@ -115,16 +114,30 @@ class BookShelfViewController: UIViewController, UIPopoverPresentationController
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if indexPath.row == 1 {
             print("阅读pdf文档")
-            let pdfDocumentName = "apple"
-            if let doc = document(pdfDocumentName) {
-                showDocument(doc)
-            } else {
-                print("Document named \(pdfDocumentName) not found in the file system")
+            let pdfPaths = Bundle.main.paths(forResourcesOfType: "pdf", inDirectory: nil)
+            let pdfPath = pdfPaths.first
+            let document = ReaderDocument.withDocumentFilePath(pdfPath, password: nil)
+            if (document != nil) {
+                let readVC = ReaderViewController.init(readerDocument: document)
+                readVC?.delegate = self
+                readVC?.modalTransitionStyle = UIModalTransitionStyle.crossDissolve
+                readVC?.modalPresentationStyle = UIModalPresentationStyle.fullScreen
+                self.present(readVC!, animated: true, completion: nil)
             }
             
         } else {
+            let pageView: LSYReadPageViewController = LSYReadPageViewController.init()
+            let fileURL = Bundle.main.url(forResource: "note", withExtension: ".txt")
+            pageView.resourceURL = fileURL
+            pageView.model = LSYReadModel.getLocalModel(with: fileURL) as! LSYReadModel
+            self.present(pageView, animated: true, completion: nil)
             print("阅读txt小说")
         }
+    }
+    
+    //MARK: - ReaderViewControllerDelegate
+    func dismiss(_ viewController: ReaderViewController!) {
+        self.dismiss(animated: true, completion: nil)
     }
     
     //MARK: - NavViewProtocol
@@ -184,19 +197,5 @@ class BookShelfViewController: UIViewController, UIPopoverPresentationController
             backgroundImage.frame = rect
         }
     }
-    
-    fileprivate func document(_ name: String) -> PDFDocument? {
-        guard let documentURL = Bundle.main.url(forResource: name, withExtension: ".pdf") else {
-            return nil
-        }
-        return PDFDocument(url: documentURL)
-    }
-    
-    fileprivate func showDocument(_ document: PDFDocument) {
-        let image = UIImage(named: "")
-        let controller = PDFViewController.createNew(with: document, title: "git", actionButtonImage: image, actionStyle: .activitySheet)
-        present(controller, animated: true, completion: nil)
-    }
-    
 }
 

@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import PDFReader
 
 class BookShopViewController: UIViewController {
 
@@ -15,30 +14,6 @@ class BookShopViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-    }
-
-    @IBAction func haha(_ sender: Any) {
-        
-        let pdfDocumentName = "sheet"
-        if let doc = document(pdfDocumentName) {
-            showDocument(doc)
-        } else {
-            print("Document named \(pdfDocumentName) not found in the file system")
-        }
-
-    }
-    
-    fileprivate func document(_ name: String) -> PDFDocument? {
-        guard let documentURL = Bundle.main.url(forResource: name, withExtension: ".pdf") else {
-            return nil
-        }
-        return PDFDocument(url: documentURL)
-    }
-    
-    fileprivate func showDocument(_ document: PDFDocument) {
-        let image = UIImage(named: "tee")
-        let controller = PDFViewController.createNew(with: document, title: "git", actionButtonImage: image, actionStyle: .activitySheet)
-        navigationController?.pushViewController(controller, animated: true)
     }
     
     override func didReceiveMemoryWarning() {
