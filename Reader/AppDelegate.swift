@@ -22,7 +22,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         let leftVC = LeftMenuViewController()
         let tabBarVC = UIStoryboard(name: "Main", bundle: nil).instantiateInitialViewController()
-        window?.rootViewController = DrawerViewController(mainVC: tabBarVC!, leftMenuVC: leftVC, leftWidth: 300)
+        window?.rootViewController = DrawerViewController(mainVC: tabBarVC!, leftMenuVC: leftVC, leftWidth: 260)
         window?.makeKeyAndVisible()
         
         return true

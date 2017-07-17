@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="ARW-WI-6AY">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="nJD-5E-E9b">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -10,113 +10,82 @@
     </dependencies>
     <scenes>
         <!--书城-->
-        <scene sceneID="eGc-y4-Jm7">
+        <scene sceneID="76L-YE-0q8">
             <objects>
-                <viewController id="BP9-U9-pOj" sceneMemberID="viewController">
+                <viewController id="fHi-E9-c1h" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="0Az-oL-fDJ"/>
-                        <viewControllerLayoutGuide type="bottom" id="jUL-UR-IcC"/>
+                        <viewControllerLayoutGuide type="top" id="wdu-ct-tol"/>
+                        <viewControllerLayoutGuide type="bottom" id="0mY-Uj-8ge"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="KHE-9P-RFb">
+                    <view key="view" contentMode="scaleToFill" id="AzQ-3e-xLr">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="书城" id="4r7-m8-QUJ"/>
+                    <navigationItem key="navigationItem" title="书城" id="F61-oE-yPp"/>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="zzB-JC-vbz" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="l6C-8J-dVt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1327.2" y="-394.45277361319341"/>
+            <point key="canvasLocation" x="1703.2" y="-654.42278860569718"/>
         </scene>
         <!--书架-->
-        <scene sceneID="ts2-lB-UqY">
+        <scene sceneID="Emy-sD-Yzk">
             <objects>
-                <viewController id="JrY-2m-xvv" customClass="BookShelfViewController" customModule="Reader" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="q5n-9H-GdP" customClass="BookShelfViewController" customModule="Reader" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="pDB-de-wjJ"/>
-                        <viewControllerLayoutGuide type="bottom" id="QrM-9a-ejN"/>
+                        <viewControllerLayoutGuide type="top" id="fWo-5a-FWX"/>
+                        <viewControllerLayoutGuide type="bottom" id="CSZ-mV-Ssf"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="uTH-NB-8F6">
+                    <view key="view" contentMode="scaleToFill" id="HEN-Xh-MsT">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="书架" id="5Pm-Lr-caq">
-                        <barButtonItem key="leftBarButtonItem" image="sidebar_setting" id="YAS-Ph-IcO">
-                            <connections>
-                                <action selector="buttonClick:" destination="JrY-2m-xvv" id="cwQ-ah-U9t"/>
-                            </connections>
-                        </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="Qs3-xE-FRL">
-                            <connections>
-                                <action selector="showAlert:" destination="JrY-2m-xvv" id="LTx-Fg-az4"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <tabBarItem key="tabBarItem" title="书架" image="wine" id="4bX-uZ-9ny"/>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="huT-JA-ZYM" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SKH-Tv-JAX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1327.2" y="-1049.3253373313344"/>
+            <point key="canvasLocation" x="765" y="-1308"/>
         </scene>
         <!--Tab Bar Controller-->
-        <scene sceneID="4eF-MG-LUK">
+        <scene sceneID="Ol0-OE-IVy">
             <objects>
-                <tabBarController id="ARW-WI-6AY" sceneMemberID="viewController">
-                    <tabBar key="tabBar" contentMode="scaleToFill" id="yWC-hF-uCF">
+                <tabBarController id="nJD-5E-E9b" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="8Wo-J3-cIH">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
                     <connections>
-                        <segue destination="pXf-A8-hV7" kind="relationship" relationship="viewControllers" id="TgQ-fl-nrk"/>
-                        <segue destination="Dxd-lr-ZM6" kind="relationship" relationship="viewControllers" id="LmM-nM-8hN"/>
+                        <segue destination="q5n-9H-GdP" kind="relationship" relationship="viewControllers" id="FQl-R4-UHb"/>
+                        <segue destination="E5W-0y-hHI" kind="relationship" relationship="viewControllers" id="FO6-Jd-vN8"/>
                     </connections>
                 </tabBarController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="AsD-BT-2hz" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jMa-bQ-M4u" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-564" y="-721"/>
-        </scene>
-        <!--书架-->
-        <scene sceneID="Gee-Lj-PPi">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="pXf-A8-hV7" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="书架" image="wine" id="1dI-d2-D0G"/>
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="rdg-yJ-Eij">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="JrY-2m-xvv" kind="relationship" relationship="rootViewController" id="ksf-nP-aIK"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="05E-fl-QTc" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="388" y="-1049.3253373313344"/>
+            <point key="canvasLocation" x="-188" y="-982"/>
         </scene>
         <!--书城-->
-        <scene sceneID="VMB-8y-xDj">
+        <scene sceneID="v3m-ha-ikt">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Dxd-lr-ZM6" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="书城" image="tee" id="2SB-vh-C8b"/>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="E5W-0y-hHI" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="书城" image="tee" id="WJt-ii-44g"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="oCh-IK-syT">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="bOF-xt-YEU">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="BP9-U9-pOj" kind="relationship" relationship="rootViewController" id="cXt-z8-wfo"/>
+                        <segue destination="fHi-E9-c1h" kind="relationship" relationship="rootViewController" id="Myw-Km-HLc"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Z3i-2O-T6R" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nMX-ie-MmJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="388" y="-394.45277361319341"/>
+            <point key="canvasLocation" x="764" y="-654.42278860569718"/>
         </scene>
     </scenes>
     <resources>
-        <image name="sidebar_setting" width="19" height="19"/>
         <image name="tee" width="33" height="33"/>
         <image name="wine" width="33" height="33"/>
     </resources>

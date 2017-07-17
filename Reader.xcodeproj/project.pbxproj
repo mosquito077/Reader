@@ -8,10 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		3F4D1C12CFB2B31784BCD9FC /* Pods_Reader.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8395C7E1836AFF5CA0536814 /* Pods_Reader.framework */; };
+		A265E5521F17135E00E96D77 /* NavView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A265E5511F17135E00E96D77 /* NavView.swift */; };
+		A265E5541F176F1F00E96D77 /* BookCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A265E5531F176F1F00E96D77 /* BookCollectionViewCell.swift */; };
+		A265E55A1F17735B00E96D77 /* Contants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A265E5591F17735B00E96D77 /* Contants.swift */; };
 		A27785231F1602EE00C3C4B4 /* LeftMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A27785221F1602EE00C3C4B4 /* LeftMenuViewController.swift */; };
 		A27785251F16030A00C3C4B4 /* BookShelfViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A27785241F16030A00C3C4B4 /* BookShelfViewController.swift */; };
 		A27785271F16032700C3C4B4 /* DrawerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A27785261F16032700C3C4B4 /* DrawerViewController.swift */; };
 		A27785291F16033F00C3C4B4 /* PopTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A27785281F16033F00C3C4B4 /* PopTableViewController.swift */; };
+		A2B3C4F31F1C4F1F00B26E0D /* UIColor+Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2B3C4F21F1C4F1F00B26E0D /* UIColor+Hex.swift */; };
 		A2B53B7D1F14A8F30067B988 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2B53B7C1F14A8F30067B988 /* AppDelegate.swift */; };
 		A2B53B7F1F14A8F30067B988 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2B53B7E1F14A8F30067B988 /* ViewController.swift */; };
 		A2B53B821F14A8F30067B988 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A2B53B801F14A8F30067B988 /* Main.storyboard */; };
@@ -42,10 +46,14 @@
 		02765B9AECCC19BC0BC60F10 /* Pods-Reader.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Reader.release.xcconfig"; path = "Pods/Target Support Files/Pods-Reader/Pods-Reader.release.xcconfig"; sourceTree = "<group>"; };
 		7A4789AC8F610F482ACB3DE4 /* Pods-Reader.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Reader.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Reader/Pods-Reader.debug.xcconfig"; sourceTree = "<group>"; };
 		8395C7E1836AFF5CA0536814 /* Pods_Reader.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Reader.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A265E5511F17135E00E96D77 /* NavView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavView.swift; sourceTree = "<group>"; };
+		A265E5531F176F1F00E96D77 /* BookCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookCollectionViewCell.swift; sourceTree = "<group>"; };
+		A265E5591F17735B00E96D77 /* Contants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Contants.swift; sourceTree = "<group>"; };
 		A27785221F1602EE00C3C4B4 /* LeftMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeftMenuViewController.swift; sourceTree = "<group>"; };
 		A27785241F16030A00C3C4B4 /* BookShelfViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookShelfViewController.swift; sourceTree = "<group>"; };
 		A27785261F16032700C3C4B4 /* DrawerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrawerViewController.swift; sourceTree = "<group>"; };
 		A27785281F16033F00C3C4B4 /* PopTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopTableViewController.swift; sourceTree = "<group>"; };
+		A2B3C4F21F1C4F1F00B26E0D /* UIColor+Hex.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Hex.swift"; sourceTree = "<group>"; };
 		A2B53B791F14A8F30067B988 /* Reader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Reader.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A2B53B7C1F14A8F30067B988 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A2B53B7E1F14A8F30067B988 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -97,6 +105,23 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		A265E5501F17134A00E96D77 /* NavView */ = {
+			isa = PBXGroup;
+			children = (
+				A265E5511F17135E00E96D77 /* NavView.swift */,
+			);
+			path = NavView;
+			sourceTree = "<group>";
+		};
+		A265E5551F1770D300E96D77 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				A2B3C4F21F1C4F1F00B26E0D /* UIColor+Hex.swift */,
+				A265E5591F17735B00E96D77 /* Contants.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
 		A2B53B701F14A8F30067B988 = {
 			isa = PBXGroup;
 			children = (
@@ -123,6 +148,8 @@
 		A2B53B7B1F14A8F30067B988 /* Reader */ = {
 			isa = PBXGroup;
 			children = (
+				A265E5551F1770D300E96D77 /* Utils */,
+				A265E5501F17134A00E96D77 /* NavView */,
 				A2B53B7C1F14A8F30067B988 /* AppDelegate.swift */,
 				A2B53B7E1F14A8F30067B988 /* ViewController.swift */,
 				A2B53B801F14A8F30067B988 /* Main.storyboard */,
@@ -133,6 +160,7 @@
 				A27785241F16030A00C3C4B4 /* BookShelfViewController.swift */,
 				A27785261F16032700C3C4B4 /* DrawerViewController.swift */,
 				A27785281F16033F00C3C4B4 /* PopTableViewController.swift */,
+				A265E5531F176F1F00E96D77 /* BookCollectionViewCell.swift */,
 			);
 			path = Reader;
 			sourceTree = "<group>";
@@ -349,12 +377,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A265E5521F17135E00E96D77 /* NavView.swift in Sources */,
+				A265E5541F176F1F00E96D77 /* BookCollectionViewCell.swift in Sources */,
 				A27785251F16030A00C3C4B4 /* BookShelfViewController.swift in Sources */,
 				A2B53B7F1F14A8F30067B988 /* ViewController.swift in Sources */,
 				A27785271F16032700C3C4B4 /* DrawerViewController.swift in Sources */,
+				A265E55A1F17735B00E96D77 /* Contants.swift in Sources */,
 				A2B53B7D1F14A8F30067B988 /* AppDelegate.swift in Sources */,
 				A27785231F1602EE00C3C4B4 /* LeftMenuViewController.swift in Sources */,
 				A27785291F16033F00C3C4B4 /* PopTableViewController.swift in Sources */,
+				A2B3C4F31F1C4F1F00B26E0D /* UIColor+Hex.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -508,12 +540,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = WKQV5DN8XZ;
+				GCC_PREFIX_HEADER = "";
 				INFOPLIST_FILE = Reader/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.mosquito.Reader;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "Reader-Bridging_header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -524,12 +557,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = WKQV5DN8XZ;
+				GCC_PREFIX_HEADER = "";
 				INFOPLIST_FILE = Reader/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.mosquito.Reader;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "Reader-Bridging_header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;

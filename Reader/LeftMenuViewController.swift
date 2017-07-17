@@ -11,7 +11,7 @@ import UIKit
 class LeftMenuViewController: UIViewController, UITabBarDelegate, UITableViewDataSource {
 
     let headerViewH: CGFloat = 200
-    fileprivate let cellIdentifier = "WLCellIdentifier"
+    fileprivate let cellIdentifier = "cellIdentifier"
     
     var dataArray = [["我的包月","sidebar_purse"],
                      ["我的消息","sidebar_decoration"],
@@ -28,8 +28,8 @@ class LeftMenuViewController: UIViewController, UITabBarDelegate, UITableViewDat
     
     private lazy var tableView: UITableView = {
         
-        let tableView = UITableView(frame: CGRect(x: 0, y: self.headerViewH, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height - self.headerViewH), style: .plain)
-        tableView.backgroundColor = UIColor(colorLiteralRed: 13.0 / 255.0, green: 184.0 / 255.0, blue: 246.0 / 255.0, alpha: 1.0)
+        let tableView = UITableView(frame: CGRect(x: 0, y: self.headerViewH, width: screenW, height: screenH - self.headerViewH), style: .plain)
+        tableView.backgroundColor = UIColor.colorWithHexString(hex: "19A8F3")
         tableView.separatorStyle = UITableViewCellSeparatorStyle.none
         tableView.contentInset = UIEdgeInsets(top: 20, left: 0, bottom: 0, right: 0)
         tableView.delegate = self as? UITableViewDelegate
@@ -41,7 +41,7 @@ class LeftMenuViewController: UIViewController, UITabBarDelegate, UITableViewDat
     
     private lazy var headerView: UIView = {
         
-        let view = UIView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: self.headerViewH))
+        let view = UIView(frame: CGRect(x: 0, y: 0, width: screenW, height: self.headerViewH))
         let bgImageView = UIImageView(frame: view.frame)
         bgImageView.image = UIImage(named: "sidebar_bg")
         bgImageView.contentMode = UIViewContentMode.scaleAspectFill

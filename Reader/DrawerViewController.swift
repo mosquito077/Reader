@@ -14,7 +14,7 @@ class DrawerViewController: UIViewController {
     
     var mainVC: UIViewController?
     var leftVC: UIViewController?
-    var maxWidth: CGFloat = 300
+    var maxWidth: CGFloat = 260
     
     //MARK: - 单例
     static let sharedDrawer = UIApplication.shared.keyWindow?.rootViewController as? DrawerViewController
@@ -111,11 +111,12 @@ class DrawerViewController: UIViewController {
     //MARK: - 打开左侧菜单
     func openLeftMenu() {
         UIView.animate(withDuration: 0.25, delay: 0, options: UIViewAnimationOptions.curveLinear, animations: {
+            self.mainVC?.view.addSubview(self.coverBtn)
             self.leftVC?.view.transform = CGAffineTransform.identity
             self.mainVC?.view.transform = CGAffineTransform(translationX: self.maxWidth, y: 0)
         }, completion: {
             (finish: Bool) -> () in
-            self.mainVC?.view.addSubview(self.coverBtn)
+            
         })
     }
     
