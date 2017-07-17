@@ -12,7 +12,7 @@
         <!--书城-->
         <scene sceneID="76L-YE-0q8">
             <objects>
-                <viewController id="fHi-E9-c1h" sceneMemberID="viewController">
+                <viewController id="fHi-E9-c1h" customClass="BookShopViewController" customModule="Reader" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="wdu-ct-tol"/>
                         <viewControllerLayoutGuide type="bottom" id="0mY-Uj-8ge"/>
@@ -20,6 +20,18 @@
                     <view key="view" contentMode="scaleToFill" id="AzQ-3e-xLr">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UgU-Vm-ugH">
+                                <rect key="frame" x="145" y="284" width="123" height="57"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.75686274509999996" green="0.4431372549" blue="0.54117647059999996" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <state key="normal" title="pdf"/>
+                                <connections>
+                                    <action selector="haha:" destination="fHi-E9-c1h" eventType="touchUpInside" id="n7r-2Q-ZGP"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="书城" id="F61-oE-yPp"/>

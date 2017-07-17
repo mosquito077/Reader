@@ -22,19 +22,20 @@ class BookCollectionViewCell: UICollectionViewCell {
         imageView?.snp.makeConstraints({ (make) in
             make.leading.top.equalToSuperview()
             make.width.equalTo((screenW-60)/3)
-            make.height.equalTo(200.0)
+            make.height.equalTo(114.0)
         })
         
         nameLabel = UILabel(frame: CGRect.zero)
         nameLabel?.textColor = UIColor.black
+        nameLabel?.numberOfLines = 2
         nameLabel?.textAlignment = NSTextAlignment.center
         nameLabel?.font = UIFont.systemFont(ofSize: 17.0)
         self.addSubview(nameLabel!)
         nameLabel?.snp.makeConstraints({ (make) in
             make.leading.equalToSuperview()
-            make.top.equalTo(imageView!).offset(200.0)
+            make.top.equalTo(imageView!).offset(114.0)
             make.width.equalTo((screenW-60)/3)
-            make.height.equalTo(20.0)
+            make.height.equalTo(43.0)
         })
     }
     

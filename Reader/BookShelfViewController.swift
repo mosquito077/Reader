@@ -8,6 +8,7 @@
 
 import UIKit
 import SnapKit
+import PDFReader
 
 class BookShelfViewController: UIViewController, UIPopoverPresentationControllerDelegate, NavViewProtocol, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
@@ -20,6 +21,9 @@ class BookShelfViewController: UIViewController, UIPopoverPresentationController
     var navView: NavView!
     
     var backImageHeight: CGFloat = 200
+    
+    var dataArray = [["txt小说","novel"],
+                     ["pdf文档","book"]]
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -47,7 +51,7 @@ class BookShelfViewController: UIViewController, UIPopoverPresentationController
         self.view.addSubview(navView)
         
         let layout = UICollectionViewFlowLayout()
-        layout.itemSize = CGSize(width: (screenW-60)/3, height: 220.0)
+        layout.itemSize = CGSize(width: (screenW-60)/3, height: 157.0)
         mainCollectionView = UICollectionView(frame: CGRect.zero, collectionViewLayout: layout)
         mainCollectionView.backgroundColor = UIColor.clear
         mainCollectionView.isScrollEnabled = true
@@ -73,7 +77,7 @@ class BookShelfViewController: UIViewController, UIPopoverPresentationController
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 2
+        return dataArray.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -81,8 +85,8 @@ class BookShelfViewController: UIViewController, UIPopoverPresentationController
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! BookCollectionViewCell
         cell.layer.borderWidth = 0.3
         cell.layer.borderColor = UIColor.white.cgColor
-        cell.imageView?.image = UIImage(named: "tee")
-        cell.nameLabel?.text = "欢乐颂"
+        cell.imageView?.image = UIImage(named: dataArray[indexPath.row][1])
+        cell.nameLabel?.text = dataArray[indexPath.row][0]
         return cell
         
     }
@@ -105,6 +109,22 @@ class BookShelfViewController: UIViewController, UIPopoverPresentationController
     //返回cell 上下左右的间距
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets{
         return UIEdgeInsetsMake(5, 10, 5, 10)
+    }
+    
+    //点击cell
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if indexPath.row == 1 {
+            print("阅读pdf文档")
+            let pdfDocumentName = "apple"
+            if let doc = document(pdfDocumentName) {
+                showDocument(doc)
+            } else {
+                print("Document named \(pdfDocumentName) not found in the file system")
+            }
+            
+        } else {
+            print("阅读txt小说")
+        }
     }
     
     //MARK: - NavViewProtocol
@@ -163,6 +183,19 @@ class BookShelfViewController: UIViewController, UIPopoverPresentationController
             rect.origin.y = -contentOffsetY
             backgroundImage.frame = rect
         }
+    }
+    
+    fileprivate func document(_ name: String) -> PDFDocument? {
+        guard let documentURL = Bundle.main.url(forResource: name, withExtension: ".pdf") else {
+            return nil
+        }
+        return PDFDocument(url: documentURL)
+    }
+    
+    fileprivate func showDocument(_ document: PDFDocument) {
+        let image = UIImage(named: "")
+        let controller = PDFViewController.createNew(with: document, title: "git", actionButtonImage: image, actionStyle: .activitySheet)
+        present(controller, animated: true, completion: nil)
     }
     
 }
