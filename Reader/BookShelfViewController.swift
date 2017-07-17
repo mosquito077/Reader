@@ -19,8 +19,7 @@ class BookShelfViewController: UIViewController, UIPopoverPresentationController
     var mainCollectionView: UICollectionView!
     var navView: NavView!
     
-    var backImageWidth: CGFloat!
-    var backImageHeight: CGFloat!
+    var backImageHeight: CGFloat = 200
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,28 +35,21 @@ class BookShelfViewController: UIViewController, UIPopoverPresentationController
         backgroundImage = UIImageView(frame: CGRect.zero)
         backgroundImage.image = image
         backgroundImage.isUserInteractionEnabled = true
-        backImageWidth = backgroundImage.frame.size.width
-        backImageHeight = backgroundImage.frame.size.height
         self.view.addSubview(backgroundImage)
         backgroundImage.snp.makeConstraints { (make) in
             make.leading.trailing.top.equalToSuperview()
             make.height.equalTo(backgroundHeight)
         }
         
-        navView = NavView.init(frame: CGRect.zero)
+        navView = NavView.init(frame: CGRect(x: 0, y: 0, width: screenW, height: navViewHeight))
         navView.navViewDelegate = self
         navView.backgroundColor = UIColor.clear
         self.view.addSubview(navView)
-        navView.snp.makeConstraints { (make) in
-            make.leading.trailing.top.equalToSuperview()
-            make.height.equalTo(navViewHeight)
-        }
         
         let layout = UICollectionViewFlowLayout()
         layout.itemSize = CGSize(width: (screenW-60)/3, height: 220.0)
         mainCollectionView = UICollectionView(frame: CGRect.zero, collectionViewLayout: layout)
         mainCollectionView.backgroundColor = UIColor.clear
-        mainCollectionView.scrollIndicatorInsets
         mainCollectionView.isScrollEnabled = true
         mainCollectionView.delegate = self
         mainCollectionView.dataSource = self
@@ -81,7 +73,7 @@ class BookShelfViewController: UIViewController, UIPopoverPresentationController
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 4
+        return 2
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -159,14 +151,14 @@ class BookShelfViewController: UIViewController, UIPopoverPresentationController
         if contentOffsetY < 0 {
             var rect = backgroundImage.frame
             rect.size.height = backImageHeight - contentOffsetY
-            rect.size.width = backImageWidth * (backImageHeight - contentOffsetY)/backImageHeight
-            rect.origin.x = -(rect.size.width-backImageWidth)/2
+            rect.size.width = screenW * (backImageHeight - contentOffsetY)/backImageHeight
+            rect.origin.x = -(rect.size.width-screenW)/2
             rect.origin.y = 0
             backgroundImage.frame = rect
         } else {
             var rect = backgroundImage.frame
             rect.size.height = backImageHeight
-            rect.size.width = backImageWidth
+            rect.size.width = screenW
             rect.origin.x = 0
             rect.origin.y = -contentOffsetY
             backgroundImage.frame = rect

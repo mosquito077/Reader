@@ -16,6 +16,8 @@
 		A27785271F16032700C3C4B4 /* DrawerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A27785261F16032700C3C4B4 /* DrawerViewController.swift */; };
 		A27785291F16033F00C3C4B4 /* PopTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A27785281F16033F00C3C4B4 /* PopTableViewController.swift */; };
 		A2B3C4F31F1C4F1F00B26E0D /* UIColor+Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2B3C4F21F1C4F1F00B26E0D /* UIColor+Hex.swift */; };
+		A2B3C4F71F1C5DDC00B26E0D /* note.txt in Resources */ = {isa = PBXBuildFile; fileRef = A2B3C4F51F1C5DDC00B26E0D /* note.txt */; };
+		A2B3C4F81F1C5DDC00B26E0D /* sheet.pdf in Resources */ = {isa = PBXBuildFile; fileRef = A2B3C4F61F1C5DDC00B26E0D /* sheet.pdf */; };
 		A2B53B7D1F14A8F30067B988 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2B53B7C1F14A8F30067B988 /* AppDelegate.swift */; };
 		A2B53B7F1F14A8F30067B988 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2B53B7E1F14A8F30067B988 /* ViewController.swift */; };
 		A2B53B821F14A8F30067B988 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A2B53B801F14A8F30067B988 /* Main.storyboard */; };
@@ -54,6 +56,8 @@
 		A27785261F16032700C3C4B4 /* DrawerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrawerViewController.swift; sourceTree = "<group>"; };
 		A27785281F16033F00C3C4B4 /* PopTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopTableViewController.swift; sourceTree = "<group>"; };
 		A2B3C4F21F1C4F1F00B26E0D /* UIColor+Hex.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Hex.swift"; sourceTree = "<group>"; };
+		A2B3C4F51F1C5DDC00B26E0D /* note.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = note.txt; sourceTree = "<group>"; };
+		A2B3C4F61F1C5DDC00B26E0D /* sheet.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = sheet.pdf; sourceTree = "<group>"; };
 		A2B53B791F14A8F30067B988 /* Reader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Reader.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A2B53B7C1F14A8F30067B988 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A2B53B7E1F14A8F30067B988 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -122,6 +126,15 @@
 			path = Utils;
 			sourceTree = "<group>";
 		};
+		A2B3C4F41F1C5DC600B26E0D /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				A2B3C4F51F1C5DDC00B26E0D /* note.txt */,
+				A2B3C4F61F1C5DDC00B26E0D /* sheet.pdf */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		A2B53B701F14A8F30067B988 = {
 			isa = PBXGroup;
 			children = (
@@ -148,6 +161,7 @@
 		A2B53B7B1F14A8F30067B988 /* Reader */ = {
 			isa = PBXGroup;
 			children = (
+				A2B3C4F41F1C5DC600B26E0D /* Resources */,
 				A265E5551F1770D300E96D77 /* Utils */,
 				A265E5501F17134A00E96D77 /* NavView */,
 				A2B53B7C1F14A8F30067B988 /* AppDelegate.swift */,
@@ -302,9 +316,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A2B3C4F71F1C5DDC00B26E0D /* note.txt in Resources */,
 				A2B53B871F14A8F30067B988 /* LaunchScreen.storyboard in Resources */,
 				A2B53B841F14A8F30067B988 /* Assets.xcassets in Resources */,
 				A2B53B821F14A8F30067B988 /* Main.storyboard in Resources */,
+				A2B3C4F81F1C5DDC00B26E0D /* sheet.pdf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
