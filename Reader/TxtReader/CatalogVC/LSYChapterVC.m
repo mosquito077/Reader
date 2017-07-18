@@ -10,9 +10,12 @@
 #import "LSYCatalogViewController.h"
 
 static  NSString *chapterCell = @"chapterCell";
+
 @interface LSYChapterVC ()<UITableViewDelegate,UITableViewDataSource>
+
 @property (nonatomic,strong) UITableView *tabView;
 @property (nonatomic) NSUInteger readChapter;
+
 @end
 
 @implementation LSYChapterVC

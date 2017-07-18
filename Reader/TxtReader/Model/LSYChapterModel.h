@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import <CoreText/CoreText.h>
+
 typedef  NS_ENUM(NSInteger,ReaderType){
     ReaderTxt,
 };

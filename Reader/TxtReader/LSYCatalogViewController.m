@@ -12,8 +12,10 @@
 #import "LSYMarkVC.h"
 
 @interface LSYCatalogViewController ()<LSYViewPagerVCDelegate,LSYViewPagerVCDataSource,LSYCatalogViewControllerDelegate>
+
 @property (nonatomic,copy) NSArray *titleArray;
 @property (nonatomic,copy) NSArray *VCArray;
+
 @end
 
 @implementation LSYCatalogViewController

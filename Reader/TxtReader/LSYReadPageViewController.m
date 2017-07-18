@@ -11,7 +11,6 @@
 #import "LSYChapterModel.h"
 #import "LSYMenuView.h"
 #import "LSYCatalogViewController.h"
-#import "UIImage+ImageEffects.h"
 #import "LSYNoteModel.h"
 #import "LSYMarkModel.h"
 #import <objc/runtime.h>
@@ -25,12 +24,14 @@
     NSUInteger _pageChange;     //将要变化的页数
     BOOL _isTransition;     //是否开始翻页
 }
+
 @property (nonatomic,strong) UIPageViewController *pageViewController;
-@property (nonatomic,getter=isShowBar) BOOL showBar; //是否显示状态栏
-@property (nonatomic,strong) LSYMenuView *menuView; //菜单栏
+@property (nonatomic,getter=isShowBar) BOOL showBar;                //是否显示状态栏
+@property (nonatomic,strong) LSYMenuView *menuView;                 //菜单栏
 @property (nonatomic,strong) LSYCatalogViewController *catalogVC;   //侧边栏
-@property (nonatomic,strong) UIView * catalogView;  //侧边栏背景
-@property (nonatomic,strong) LSYReadViewController *readView;   //当前阅读视图
+@property (nonatomic,strong) UIView * catalogView;                  //侧边栏背景
+@property (nonatomic,strong) LSYReadViewController *readView;       //当前阅读视图
+
 @end
 
 @implementation LSYReadPageViewController
@@ -174,9 +175,8 @@
     UIGraphicsBeginImageContextWithOptions(CGSizeMake(CGRectGetWidth(self.view.frame), CGRectGetHeight(self.view.frame)), NO, 1.0f);
     [self.view drawViewHierarchyInRect:CGRectMake(0, 0, CGRectGetWidth(self.view.frame), CGRectGetHeight(self.view.frame)) afterScreenUpdates:NO];
     UIImage *snapshotImage = UIGraphicsGetImageFromCurrentImageContext();
-    UIImage *blurredSnapshotImage = [snapshotImage applyLightEffect];
     UIGraphicsEndImageContext();
-    return blurredSnapshotImage;
+    return snapshotImage;
 }
 
 #pragma mark - Menu View Delegate

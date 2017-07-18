@@ -10,8 +10,11 @@
 #import "LSYCatalogViewController.h"
 
 static  NSString *markCell = @"markCell";
+
 @interface LSYMarkVC ()<UITableViewDelegate,UITableViewDataSource>
+
 @property (nonatomic,strong) UITableView *tabView;
+
 @end
 
 @implementation LSYMarkVC

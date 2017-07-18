@@ -9,7 +9,7 @@
 import UIKit
 import SnapKit
 
-class BookShelfViewController: UIViewController, UIPopoverPresentationControllerDelegate, NavViewProtocol, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, ReaderViewControllerDelegate{
+class BookShelfViewController: UIViewController, UIPopoverPresentationControllerDelegate,UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, NavViewProtocol, ReaderViewControllerDelegate {
     
     let backgroundHeight: CGFloat = 200
     let navViewHeight: CGFloat = 64
@@ -114,8 +114,8 @@ class BookShelfViewController: UIViewController, UIPopoverPresentationController
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if indexPath.row == 1 {
             print("阅读pdf文档")
-            let pdfPaths = Bundle.main.paths(forResourcesOfType: "pdf", inDirectory: nil)
-            let pdfPath = pdfPaths.first
+            let filePaths = Bundle.main.paths(forResourcesOfType: "pdf", inDirectory: nil)
+            let pdfPath = filePaths.first
             let document = ReaderDocument.withDocumentFilePath(pdfPath, password: nil)
             if (document != nil) {
                 let readVC = ReaderViewController.init(readerDocument: document)
@@ -126,12 +126,13 @@ class BookShelfViewController: UIViewController, UIPopoverPresentationController
             }
             
         } else {
+            print("阅读txt小说")
             let pageView: LSYReadPageViewController = LSYReadPageViewController.init()
-            let fileURL = Bundle.main.url(forResource: "note", withExtension: ".txt")
+            let fileURL = Bundle.main.url(forResource: "people", withExtension: ".txt")
             pageView.resourceURL = fileURL
             pageView.model = LSYReadModel.getLocalModel(with: fileURL) as! LSYReadModel
             self.present(pageView, animated: true, completion: nil)
-            print("阅读txt小说")
+            
         }
     }
     
@@ -153,7 +154,7 @@ class BookShelfViewController: UIViewController, UIPopoverPresentationController
         popVC.popoverPresentationController?.permittedArrowDirections = UIPopoverArrowDirection.up
         popVC.popoverPresentationController?.delegate = self
         popVC.popoverPresentationController?.backgroundColor = UIColor.white
-        present(popVC, animated: true, completion: nil)
+        present(popVC, animated: false, completion: nil)
     }
 
     override func didReceiveMemoryWarning() {

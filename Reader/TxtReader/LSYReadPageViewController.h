@@ -10,6 +10,8 @@
 #import "LSYReadModel.h"
 
 @interface LSYReadPageViewController : UIViewController
+
 @property (nonatomic,strong) NSURL *resourceURL;
 @property (nonatomic,strong) LSYReadModel *model;
+
 @end

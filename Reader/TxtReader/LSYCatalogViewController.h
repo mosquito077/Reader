@@ -10,6 +10,7 @@
 #import "LSYReadModel.h"
 
 @class LSYCatalogViewController;
+
 @protocol LSYCatalogViewControllerDelegate <NSObject>
 
 @optional

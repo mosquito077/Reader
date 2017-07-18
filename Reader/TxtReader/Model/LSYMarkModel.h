@@ -10,6 +10,8 @@
 #import "LSYRecordModel.h"
 
 @interface LSYMarkModel : NSObject<NSCoding>
+
 @property (nonatomic,strong) NSDate *date;
 @property (nonatomic,strong) LSYRecordModel *recordModel;
+
 @end

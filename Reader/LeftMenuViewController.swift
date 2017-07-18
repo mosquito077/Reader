@@ -36,6 +36,7 @@ class LeftMenuViewController: UIViewController, UITabBarDelegate, UITableViewDat
         tableView.dataSource = self
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: self.cellIdentifier)
         return tableView
+        
     }()
     
     

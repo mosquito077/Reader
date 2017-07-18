@@ -12,7 +12,7 @@
         <!--书城-->
         <scene sceneID="76L-YE-0q8">
             <objects>
-                <viewController id="fHi-E9-c1h" customClass="BookShopViewController" customModule="Reader" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="fHi-E9-c1h" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="wdu-ct-tol"/>
                         <viewControllerLayoutGuide type="bottom" id="0mY-Uj-8ge"/>

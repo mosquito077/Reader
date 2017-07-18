@@ -10,8 +10,11 @@
 #import "LSYCatalogViewController.h"
 
 static  NSString *noteCell = @"noteCell";
+
 @interface LSYNoteVC ()<UITableViewDelegate,UITableViewDataSource>
+
 @property (nonatomic,strong) UITableView *tabView;
+
 @end
 
 @implementation LSYNoteVC

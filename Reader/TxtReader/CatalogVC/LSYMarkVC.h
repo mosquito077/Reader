@@ -12,6 +12,8 @@
 @protocol LSYCatalogViewControllerDelegate;
 
 @interface LSYMarkVC : UIViewController
+
 @property (nonatomic,strong) LSYReadModel *readModel;
-@property (nonatomic,weak) id<LSYCatalogViewControllerDelegate>delegate;
+@property (nonatomic,weak) id <LSYCatalogViewControllerDelegate> delegate;
+
 @end

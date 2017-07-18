@@ -17,6 +17,7 @@
 @property (nonatomic,strong) NSString *content;
 @property (nonatomic,strong) NSArray *imageArray;
 @property (nonatomic,strong) id<LSYReadViewControllerDelegate>delegate;
+
 -(void)cancelSelected;
 
 @end
