@@ -21,8 +21,15 @@ class BookShelfViewController: UIViewController, UIPopoverPresentationController
     
     var backImageHeight: CGFloat = 200
     
-    var dataArray = [["txt小说","novel"],
-                     ["pdf文档","book"]]
+    var txtArray = [["一六二九", "1629"],
+                    ["黑暗剑士", "black"],
+                    ["三国无双", "three"],
+                    ["数字人生", "number"],
+                    ["异闻录", "novel"]]
+    
+    var pdfArray = [["iOS", "1704"],
+                    ["Android", "17043"]]
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -51,9 +58,12 @@ class BookShelfViewController: UIViewController, UIPopoverPresentationController
         
         let layout = UICollectionViewFlowLayout()
         layout.itemSize = CGSize(width: (screenW-60)/3, height: 157.0)
+        layout.sectionInset = UIEdgeInsets.zero
         mainCollectionView = UICollectionView(frame: CGRect.zero, collectionViewLayout: layout)
         mainCollectionView.backgroundColor = UIColor.clear
         mainCollectionView.isScrollEnabled = true
+        mainCollectionView.alwaysBounceVertical = true
+        mainCollectionView.contentSize = CGSize(width: screenW, height: screenH)
         mainCollectionView.delegate = self
         mainCollectionView.dataSource = self
         //注册一个cell
@@ -65,35 +75,48 @@ class BookShelfViewController: UIViewController, UIPopoverPresentationController
         mainCollectionView.snp.makeConstraints { (make) in
             make.leading.trailing.equalToSuperview()
             make.top.equalToSuperview().offset(64)
-            make.height.equalTo(screenH)
+            make.bottom.equalToSuperview().offset(-64.0)
         }
         
     }
     
     //MARK - collectionViewDelegate
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return 1
+        return 3
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return dataArray.count
+        if section == 1 {
+            return txtArray.count
+        } else if section == 2 {
+            return pdfArray.count
+        }
+        return 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! BookCollectionViewCell
-        cell.layer.borderWidth = 0.3
-        cell.layer.borderColor = UIColor.white.cgColor
-        cell.imageView?.image = UIImage(named: dataArray[indexPath.row][1])
-        cell.nameLabel?.text = dataArray[indexPath.row][0]
+        
+        if indexPath.section == 1 {
+            cell.imageView?.image = UIImage(named: txtArray[indexPath.row][1])
+            cell.nameLabel?.text = txtArray[indexPath.row][0]
+        } else if indexPath.section == 2 {
+            cell.imageView?.image = UIImage(named: pdfArray[indexPath.row][1])
+            cell.nameLabel?.text = pdfArray[indexPath.row][0]
+        }
+        
         return cell
         
     }
     
     //返回HeaderView的宽高
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize{
-        
-        return CGSize(width: screenW, height: 136.0)
+        if section == 0 {
+            return CGSize(width: screenW, height: 136.0)
+        } else {
+           return CGSize(width: screenW, height: 45.0)
+        }
     }
     
     //返回自定义的HeaderView
@@ -101,22 +124,44 @@ class BookShelfViewController: UIViewController, UIPopoverPresentationController
         
         let headView = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionElementKindSectionHeader, withReuseIdentifier: "headView", for: indexPath as IndexPath)
         headView.backgroundColor = UIColor.clear
+        
+        let textArray = ["TXT小说", "PDF文档"]
+        if indexPath.section == 1 || indexPath.section == 2 {
+            let textLabel = UILabel(frame: CGRect(x: 15, y: 0, width: screenW, height: 45.0))
+            textLabel.text = textArray[indexPath.section-1]
+            textLabel.textColor = UIColor.colorWithHexString(hex: "BBBBBB")
+            headView.backgroundColor = UIColor.colorWithHexString(hex: "F0F0F0")
+            headView.addSubview(textLabel)
+        }
+        
         return headView
 
     }
-    
+
     //返回cell 上下左右的间距
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets{
-        return UIEdgeInsetsMake(5, 10, 5, 10)
+        if section == 0 {
+            return UIEdgeInsets.zero
+        }
+        return UIEdgeInsetsMake(10, 10, 10, 10)
     }
     
     //点击cell
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        if indexPath.row == 1 {
-            print("阅读pdf文档")
-            let filePaths = Bundle.main.paths(forResourcesOfType: "pdf", inDirectory: nil)
-            let pdfPath = filePaths.first
-            let document = ReaderDocument.withDocumentFilePath(pdfPath, password: nil)
+        
+        if indexPath.section == 1 {             //txt小说
+            let pageView: LSYReadPageViewController = LSYReadPageViewController.init()
+            let fileURL = Bundle.main.url(forResource: txtArray[indexPath.row][0], withExtension: ".txt")
+            pageView.resourceURL = fileURL
+            pageView.model = LSYReadModel.getLocalModel(with: fileURL) as! LSYReadModel
+            self.present(pageView, animated: true, completion: nil)
+            
+        } else if indexPath.section == 2 {     //pdf文档
+            let fileUrl = Bundle.main.url(forResource: pdfArray[indexPath.row][0], withExtension: ".pdf")
+            let fileString = fileUrl?.absoluteString
+            let index = fileString?.index((fileString?.startIndex)!, offsetBy: 7)
+            let filePath = fileString?.substring(from: index!)
+            let document = ReaderDocument.withDocumentFilePath(filePath, password: nil)
             if (document != nil) {
                 let readVC = ReaderViewController.init(readerDocument: document)
                 readVC?.delegate = self
@@ -124,15 +169,6 @@ class BookShelfViewController: UIViewController, UIPopoverPresentationController
                 readVC?.modalPresentationStyle = UIModalPresentationStyle.fullScreen
                 self.present(readVC!, animated: true, completion: nil)
             }
-            
-        } else {
-            print("阅读txt小说")
-            let pageView: LSYReadPageViewController = LSYReadPageViewController.init()
-            let fileURL = Bundle.main.url(forResource: "people", withExtension: ".txt")
-            pageView.resourceURL = fileURL
-            pageView.model = LSYReadModel.getLocalModel(with: fileURL) as! LSYReadModel
-            self.present(pageView, animated: true, completion: nil)
-            
         }
     }
     

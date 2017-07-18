@@ -32,7 +32,7 @@ class NavView: UIView {
         backgroundColor = UIColor.clear
         
         headBackView = UIImageView(frame: CGRect.zero)
-        headBackView.backgroundColor = UIColor.white
+        headBackView.backgroundColor = UIColor.colorWithHexString(hex: "162D77")
         headBackView.alpha = 0.0
         self.addSubview(headBackView)
         headBackView.snp.makeConstraints { (make) in
