@@ -11,13 +11,15 @@
 		A265E5521F17135E00E96D77 /* NavView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A265E5511F17135E00E96D77 /* NavView.swift */; };
 		A265E5541F176F1F00E96D77 /* BookCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A265E5531F176F1F00E96D77 /* BookCollectionViewCell.swift */; };
 		A265E55A1F17735B00E96D77 /* Contants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A265E5591F17735B00E96D77 /* Contants.swift */; };
-		A27785231F1602EE00C3C4B4 /* LeftMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A27785221F1602EE00C3C4B4 /* LeftMenuViewController.swift */; };
 		A27785251F16030A00C3C4B4 /* BookShelfViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A27785241F16030A00C3C4B4 /* BookShelfViewController.swift */; };
-		A27785271F16032700C3C4B4 /* DrawerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A27785261F16032700C3C4B4 /* DrawerViewController.swift */; };
-		A27785291F16033F00C3C4B4 /* PopTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A27785281F16033F00C3C4B4 /* PopTableViewController.swift */; };
 		A2AF79741F1DA0B1003B3835 /* JS.pdf in Resources */ = {isa = PBXBuildFile; fileRef = A2AF79721F1DA0B1003B3835 /* JS.pdf */; };
 		A2AF79751F1DA0B1003B3835 /* people.txt in Resources */ = {isa = PBXBuildFile; fileRef = A2AF79731F1DA0B1003B3835 /* people.txt */; };
 		A2AF797B1F1DD305003B3835 /* LSYViewPagerVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A2AF797A1F1DD305003B3835 /* LSYViewPagerVC.m */; };
+		A2AF79801F1DDE1C003B3835 /* DrawerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2AF797D1F1DDE1C003B3835 /* DrawerViewController.swift */; };
+		A2AF79811F1DDE1C003B3835 /* LeftMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2AF797E1F1DDE1C003B3835 /* LeftMenuViewController.swift */; };
+		A2AF798A1F1DE5D0003B3835 /* PopoverAction.m in Sources */ = {isa = PBXBuildFile; fileRef = A2AF79851F1DE5D0003B3835 /* PopoverAction.m */; };
+		A2AF798B1F1DE5D0003B3835 /* PopoverView.m in Sources */ = {isa = PBXBuildFile; fileRef = A2AF79871F1DE5D0003B3835 /* PopoverView.m */; };
+		A2AF798C1F1DE5D0003B3835 /* PopoverViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A2AF79891F1DE5D0003B3835 /* PopoverViewCell.m */; };
 		A2B3C4F31F1C4F1F00B26E0D /* UIColor+Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2B3C4F21F1C4F1F00B26E0D /* UIColor+Hex.swift */; };
 		A2B3C5451F1CA44200B26E0D /* LSYChapterVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A2B3C5031F1CA44200B26E0D /* LSYChapterVC.m */; };
 		A2B3C5461F1CA44200B26E0D /* LSYMarkVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A2B3C5051F1CA44200B26E0D /* LSYMarkVC.m */; };
@@ -96,14 +98,19 @@
 		A265E5511F17135E00E96D77 /* NavView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavView.swift; sourceTree = "<group>"; };
 		A265E5531F176F1F00E96D77 /* BookCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookCollectionViewCell.swift; sourceTree = "<group>"; };
 		A265E5591F17735B00E96D77 /* Contants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Contants.swift; sourceTree = "<group>"; };
-		A27785221F1602EE00C3C4B4 /* LeftMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeftMenuViewController.swift; sourceTree = "<group>"; };
 		A27785241F16030A00C3C4B4 /* BookShelfViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookShelfViewController.swift; sourceTree = "<group>"; };
-		A27785261F16032700C3C4B4 /* DrawerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrawerViewController.swift; sourceTree = "<group>"; };
-		A27785281F16033F00C3C4B4 /* PopTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopTableViewController.swift; sourceTree = "<group>"; };
 		A2AF79721F1DA0B1003B3835 /* JS.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = JS.pdf; sourceTree = "<group>"; };
 		A2AF79731F1DA0B1003B3835 /* people.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = people.txt; sourceTree = "<group>"; };
 		A2AF79791F1DD305003B3835 /* LSYViewPagerVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LSYViewPagerVC.h; sourceTree = "<group>"; };
 		A2AF797A1F1DD305003B3835 /* LSYViewPagerVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LSYViewPagerVC.m; sourceTree = "<group>"; };
+		A2AF797D1F1DDE1C003B3835 /* DrawerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrawerViewController.swift; sourceTree = "<group>"; };
+		A2AF797E1F1DDE1C003B3835 /* LeftMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeftMenuViewController.swift; sourceTree = "<group>"; };
+		A2AF79841F1DE5D0003B3835 /* PopoverAction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PopoverAction.h; sourceTree = "<group>"; };
+		A2AF79851F1DE5D0003B3835 /* PopoverAction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PopoverAction.m; sourceTree = "<group>"; };
+		A2AF79861F1DE5D0003B3835 /* PopoverView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PopoverView.h; sourceTree = "<group>"; };
+		A2AF79871F1DE5D0003B3835 /* PopoverView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PopoverView.m; sourceTree = "<group>"; };
+		A2AF79881F1DE5D0003B3835 /* PopoverViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PopoverViewCell.h; sourceTree = "<group>"; };
+		A2AF79891F1DE5D0003B3835 /* PopoverViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PopoverViewCell.m; sourceTree = "<group>"; };
 		A2B3C4F21F1C4F1F00B26E0D /* UIColor+Hex.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Hex.swift"; sourceTree = "<group>"; };
 		A2B3C4FF1F1CA2CF00B26E0D /* Reader-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Reader-Bridging-Header.h"; sourceTree = "<group>"; };
 		A2B3C5021F1CA44200B26E0D /* LSYChapterVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LSYChapterVC.h; sourceTree = "<group>"; };
@@ -262,6 +269,28 @@
 				A265E5591F17735B00E96D77 /* Contants.swift */,
 			);
 			path = Utils;
+			sourceTree = "<group>";
+		};
+		A2AF797C1F1DDDD2003B3835 /* SideMenu */ = {
+			isa = PBXGroup;
+			children = (
+				A2AF797D1F1DDE1C003B3835 /* DrawerViewController.swift */,
+				A2AF797E1F1DDE1C003B3835 /* LeftMenuViewController.swift */,
+			);
+			path = SideMenu;
+			sourceTree = "<group>";
+		};
+		A2AF79831F1DE5D0003B3835 /* PopverView */ = {
+			isa = PBXGroup;
+			children = (
+				A2AF79841F1DE5D0003B3835 /* PopoverAction.h */,
+				A2AF79851F1DE5D0003B3835 /* PopoverAction.m */,
+				A2AF79861F1DE5D0003B3835 /* PopoverView.h */,
+				A2AF79871F1DE5D0003B3835 /* PopoverView.m */,
+				A2AF79881F1DE5D0003B3835 /* PopoverViewCell.h */,
+				A2AF79891F1DE5D0003B3835 /* PopoverViewCell.m */,
+			);
+			path = PopverView;
 			sourceTree = "<group>";
 		};
 		A2B3C5001F1CA36B00B26E0D /* TxtReader */ = {
@@ -425,21 +454,20 @@
 		A2B53B7B1F14A8F30067B988 /* Reader */ = {
 			isa = PBXGroup;
 			children = (
+				A2AF79831F1DE5D0003B3835 /* PopverView */,
+				A2AF797C1F1DDDD2003B3835 /* SideMenu */,
 				A2B3C5681F1CB0C000B26E0D /* PdfReader */,
 				A2B3C5001F1CA36B00B26E0D /* TxtReader */,
 				A265E5551F1770D300E96D77 /* Utils */,
 				A265E5501F17134A00E96D77 /* NavView */,
 				A2B53B7C1F14A8F30067B988 /* AppDelegate.swift */,
 				A2B53B7E1F14A8F30067B988 /* ViewController.swift */,
+				A27785241F16030A00C3C4B4 /* BookShelfViewController.swift */,
+				A265E5531F176F1F00E96D77 /* BookCollectionViewCell.swift */,
 				A2B53B801F14A8F30067B988 /* Main.storyboard */,
 				A2B53B831F14A8F30067B988 /* Assets.xcassets */,
 				A2B53B851F14A8F30067B988 /* LaunchScreen.storyboard */,
 				A2B53B881F14A8F30067B988 /* Info.plist */,
-				A27785221F1602EE00C3C4B4 /* LeftMenuViewController.swift */,
-				A27785241F16030A00C3C4B4 /* BookShelfViewController.swift */,
-				A27785261F16032700C3C4B4 /* DrawerViewController.swift */,
-				A27785281F16033F00C3C4B4 /* PopTableViewController.swift */,
-				A265E5531F176F1F00E96D77 /* BookCollectionViewCell.swift */,
 			);
 			path = Reader;
 			sourceTree = "<group>";
@@ -666,8 +694,10 @@
 				A2B3C5931F1CB0C000B26E0D /* ReaderConstants.m in Sources */,
 				A2B3C54E1F1CA44200B26E0D /* LSYReadViewController.m in Sources */,
 				A2B3C5521F1CA44200B26E0D /* LSYReadModel.m in Sources */,
+				A2AF798A1F1DE5D0003B3835 /* PopoverAction.m in Sources */,
 				A2B3C5461F1CA44200B26E0D /* LSYMarkVC.m in Sources */,
 				A265E5521F17135E00E96D77 /* NavView.swift in Sources */,
+				A2AF79811F1DDE1C003B3835 /* LeftMenuViewController.swift in Sources */,
 				A2B3C5641F1CA44200B26E0D /* LSYTopMenuView.m in Sources */,
 				A265E5541F176F1F00E96D77 /* BookCollectionViewCell.swift in Sources */,
 				A2B3C59D1F1CB0C000B26E0D /* ReaderThumbQueue.m in Sources */,
@@ -679,11 +709,11 @@
 				A2B3C5941F1CB0C000B26E0D /* ReaderContentPage.m in Sources */,
 				A2B3C59C1F1CB0C000B26E0D /* ReaderThumbFetch.m in Sources */,
 				A2B53B7F1F14A8F30067B988 /* ViewController.swift in Sources */,
+				A2AF798B1F1DE5D0003B3835 /* PopoverView.m in Sources */,
 				A2B3C5A21F1CB0C000B26E0D /* ReaderViewController.m in Sources */,
 				A2B3C59E1F1CB0C000B26E0D /* ReaderThumbRender.m in Sources */,
 				A2B3C54B1F1CA44200B26E0D /* LSYCatalogViewController.m in Sources */,
 				A2B3C59A1F1CB0C000B26E0D /* ReaderMainToolbar.m in Sources */,
-				A27785271F16032700C3C4B4 /* DrawerViewController.swift in Sources */,
 				A2B3C5A01F1CB0C000B26E0D /* ReaderThumbsView.m in Sources */,
 				A2B3C5451F1CA44200B26E0D /* LSYChapterVC.m in Sources */,
 				A265E55A1F17735B00E96D77 /* Contants.swift in Sources */,
@@ -695,7 +725,7 @@
 				A2B3C59F1F1CB0C000B26E0D /* ReaderThumbRequest.m in Sources */,
 				A2B3C59B1F1CB0C000B26E0D /* ReaderThumbCache.m in Sources */,
 				A2B3C5621F1CA44200B26E0D /* LSYMagnifierView.m in Sources */,
-				A27785231F1602EE00C3C4B4 /* LeftMenuViewController.swift in Sources */,
+				A2AF798C1F1DE5D0003B3835 /* PopoverViewCell.m in Sources */,
 				A2AF797B1F1DD305003B3835 /* LSYViewPagerVC.m in Sources */,
 				A2B3C5611F1CA44200B26E0D /* LSYBottomMenuView.m in Sources */,
 				A2B3C5491F1CA44200B26E0D /* LSYReadParser.m in Sources */,
@@ -704,9 +734,9 @@
 				A2B3C5471F1CA44200B26E0D /* LSYNoteVC.m in Sources */,
 				A2B3C5A41F1CB0C000B26E0D /* ThumbsViewController.m in Sources */,
 				A2B3C5991F1CB0C000B26E0D /* ReaderMainPagebar.m in Sources */,
-				A27785291F16033F00C3C4B4 /* PopTableViewController.swift in Sources */,
 				A2B3C5961F1CB0C000B26E0D /* ReaderContentView.m in Sources */,
 				A2B3C5921F1CB0C000B26E0D /* CGPDFDocument.m in Sources */,
+				A2AF79801F1DDE1C003B3835 /* DrawerViewController.swift in Sources */,
 				A2B3C5981F1CB0C000B26E0D /* ReaderDocumentOutline.m in Sources */,
 				A2B3C54A1F1CA44200B26E0D /* LSYReadUtilites.m in Sources */,
 				A2B3C5971F1CB0C000B26E0D /* ReaderDocument.m in Sources */,

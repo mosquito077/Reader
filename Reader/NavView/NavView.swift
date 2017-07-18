@@ -14,7 +14,7 @@ let buttonsMargin = 2.0
 
 protocol NavViewProtocol: class {
     func navLeftButtonClick()
-    func navRightButtonClick()
+    func navRightButtonClick(sender: UIButton)
 }
 
 class NavView: UIView {
@@ -74,7 +74,7 @@ class NavView: UIView {
         rightBtn.backgroundColor = UIColor.clear
         rightBtn.setTitle("＋", for: UIControlState.normal)
         rightBtn.setTitleColor(UIColor.white, for: UIControlState.normal)
-        rightBtn.addTarget(self, action: #selector(rightButtonClick), for: UIControlEvents.touchUpInside)
+        rightBtn.addTarget(self, action: #selector(rightButtonClick(sender:)), for: UIControlEvents.touchUpInside)
         self.addSubview(rightBtn)
         
         rightBtn.snp.makeConstraints { (make) in
@@ -94,8 +94,8 @@ class NavView: UIView {
         navViewDelegate?.navLeftButtonClick()
     }
     
-    func rightButtonClick() {
-        navViewDelegate?.navRightButtonClick()
+    func rightButtonClick(sender:UIButton?) {
+        navViewDelegate?.navRightButtonClick(sender: sender!)
     }
 
 

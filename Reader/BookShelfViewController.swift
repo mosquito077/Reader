@@ -146,15 +146,19 @@ class BookShelfViewController: UIViewController, UIPopoverPresentationController
         DrawerViewController.sharedDrawer?.openLeftMenu()
     }
     
-    func navRightButtonClick() {
-        let popVC = PopTableViewController()
-        popVC.modalPresentationStyle = UIModalPresentationStyle.popover
-        popVC.popoverPresentationController?.sourceView = navView.rightBtn
-        popVC.popoverPresentationController?.sourceRect = navView.rightBtn.bounds
-        popVC.popoverPresentationController?.permittedArrowDirections = UIPopoverArrowDirection.up
-        popVC.popoverPresentationController?.delegate = self
-        popVC.popoverPresentationController?.backgroundColor = UIColor.white
-        present(popVC, animated: false, completion: nil)
+    func navRightButtonClick(sender: UIButton) {
+        let popoverView = PopoverView.init()
+        popoverView.showShade = true
+        popoverView.show(to: sender, with: bookAction())
+    }
+    
+    func bookAction() -> Array<PopoverAction>{
+        let importBookAction = PopoverAction.init(image: UIImage(named: "right_face")
+            , title: "导入书籍", handler: nil)
+        let listModeAction = PopoverAction.init(image:  UIImage(named: "right_menu"), title: "列表模式", handler: nil)
+        let bookSelfGroupAction = PopoverAction.init(image:  UIImage(named: "right_money"), title: "书架分组", handler: nil)
+        let bookSelfEditAction = PopoverAction.init(image:  UIImage(named: "right_multichat"), title: "编辑书架", handler: nil)
+        return [importBookAction!, listModeAction!, bookSelfGroupAction!, bookSelfEditAction!]
     }
 
     override func didReceiveMemoryWarning() {

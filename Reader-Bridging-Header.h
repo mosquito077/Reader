@@ -20,5 +20,7 @@
 #import "LSYReadModel.h"
 #import "ReaderDocument.h"
 #import "ReaderViewController.h"
+#import "PopoverView.h"
+#import "PopoverAction.h"
 
 #endif /* Reader_Bridging_Header_h */
